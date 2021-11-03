@@ -10,6 +10,16 @@ const getAllTasks = async (_req, res) => {
   return res.status(data.status).json(data.results);
 };
 
+const insertTask = async (req, res) => {
+  const {
+    author, title, description, status,
+  } = req.body;
+
+  const data = await service.insertTask(author, title, description, status);
+  return res.status(data.status).json(data);
+};
+
 module.exports = {
   getAllTasks,
+  insertTask,
 };

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const controller = require('../controller/taskController');
+const validations = require('../middlewares/taskValidations');
 
 router.get(
   '/task',
@@ -8,6 +9,8 @@ router.get(
 
 router.post(
   '/task',
+  validations.verifyEmptyTaskData,
+  controller.insertTask,
 );
 
 router.put(
