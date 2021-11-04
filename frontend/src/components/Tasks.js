@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import axios from 'axios';
 import TaskCard from './TaskCard';
 import './css/tasks.css';
 
-export default function Tasks({update, setUpdate}) {
+export default function Tasks() {
   const [tasks, setTasks] = useState([]);
-  console.log(tasks);
+  const { updated } = useSelector((state) => state.taskReducer);
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -13,15 +15,12 @@ export default function Tasks({update, setUpdate}) {
       setTasks(response.data);
     }
     fetchTasks();
-    setTimeout(() => {
-      setUpdate(!update);
-    }, 100)
-  }, [update, setUpdate]);
+  }, [updated]);
 
   return (
     <div className="tasks-container">
       {!tasks.err && tasks.map((task) => (
-        <TaskCard key={task._id} task={ task } setUpdate={setUpdate} update={update}/>
+        <TaskCard key={task._id} task={ task } />
       ))}
     </div>
   )

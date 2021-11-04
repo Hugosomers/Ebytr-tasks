@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
+import {useDispatch} from 'react-redux';
 import axios from 'axios';
 import './css/createTask.css';
+import { changeUpdate } from '../redux/actions/taskActions';
 
-export default function CreateTask({ update }) {
+export default function CreateTask() {
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [status, setStatus] = useState('');
+  const dispatch = useDispatch()
 
   const createTask = async () => {
 
@@ -17,11 +20,9 @@ export default function CreateTask({ update }) {
       status,
     };
 
-    const response = await axios.post('http://localhost:3001/task', body);
-    if (response.data.status === 201) {
-      alert('Task criada')
-    }
-    update(true);
+    await axios.post('http://localhost:3001/task', body);
+    dispatch(changeUpdate())
+    // setUpdate(!update)
   }
 
   return (

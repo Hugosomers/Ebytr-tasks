@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import CreateTask from './components/CreateTask';
 import Tasks from './components/Tasks';
 
 function App() {
-  const [update, setUpdate] = useState(false);
+
   return (
     <div className="App">
-      <CreateTask update={setUpdate}/>
-      <Tasks update={update} setUpdate={setUpdate}/>
+      <CreateTask />
+      <Tasks />
     </div>
   );
 }
