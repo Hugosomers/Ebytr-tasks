@@ -4,9 +4,12 @@ import { BsTrash } from 'react-icons/bs';
 import axios from 'axios';
 
 
-export default function TaskCard({ task }) {
+export default function TaskCard({ task, setUpdate }) {
   const deleteTask = async () => {
     await axios.delete(`http://localhost:3001/task/${task._id}`);
+    setTimeout(() => {
+      setUpdate(false);
+    }, 1000)
   }
 
   return (

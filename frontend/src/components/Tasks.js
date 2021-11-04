@@ -21,7 +21,7 @@ export default function Tasks({update, setUpdate}) {
   return (
     <div className="tasks-container">
       {!tasks.err && tasks.map((task) => (
-        <TaskCard key={task._id} task={ task }/>
+        <TaskCard key={task._id} task={ task } setUpdate={setUpdate}/>
       ))}
     </div>
   )
