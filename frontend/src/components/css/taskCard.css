@@ -1,0 +1,39 @@
+.task-card {
+  color: #2a2a2a;
+  background-color: #fffffe;
+  border: 3px solid #0d0d0d;
+  border-radius: 5px;
+  padding: 10px;
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  font-size: 18px;
+  overflow: auto;
+}
+
+.task-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-icon {
+  color: #d9376e;
+  font-size: 25px;
+  margin: 8px;
+}
+
+.update-icon {
+  color: #ff8e3c;
+  font-size: 25px;
+  margin: 8px;
+}
+
+.status-icon {
+  margin: 0 10px;
+}
+
+.task-card-status {
+  display: flex;
+  align-items: center;
+}
