@@ -30,8 +30,14 @@ const editTask = async (id, author, title, description, status) => {
   return returnData({ id }, 'Updated', 200);
 };
 
+const deleteTask = async (id) => {
+  await model.deleteTask(id);
+  return returnData({ id }, 'Deleted', 200);
+};
+
 module.exports = {
   getAllTasks,
   insertTask,
   editTask,
+  deleteTask,
 };

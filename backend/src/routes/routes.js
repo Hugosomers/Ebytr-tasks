@@ -20,7 +20,8 @@ router.put(
 );
 
 router.delete(
-  '/task',
+  '/task/:id',
+  controller.deleteTask,
 );
 
 module.exports = router;

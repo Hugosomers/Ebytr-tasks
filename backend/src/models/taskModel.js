@@ -33,9 +33,16 @@ const editTask = async (id, author, title, description, status) => {
   return data;
 };
 
+const deleteTask = async (id) => {
+  const data = await connection()
+    .then((db) => db.collection('tasks').deleteOne({ _id: new ObjectId(id) }));
+  return data;
+};
+
 module.exports = {
   getTaskById,
   getAllTasks,
   insertTask,
   editTask,
+  deleteTask,
 };
