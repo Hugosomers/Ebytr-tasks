@@ -19,7 +19,18 @@ const insertTask = async (req, res) => {
   return res.status(data.status).json(data);
 };
 
+const editTask = async (req, res) => {
+  const { id } = req.params;
+  const {
+    author, title, description, status,
+  } = req.body;
+
+  const data = await service.editTask(id, author, title, description, status);
+  return res.status(data.status).json(data);
+};
+
 module.exports = {
   getAllTasks,
   insertTask,
+  editTask,
 };

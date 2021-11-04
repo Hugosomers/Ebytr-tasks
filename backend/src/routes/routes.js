@@ -14,7 +14,9 @@ router.post(
 );
 
 router.put(
-  '/task',
+  '/task/:id',
+  validations.verifyEmptyTaskData,
+  controller.editTask,
 );
 
 router.delete(

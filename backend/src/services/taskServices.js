@@ -25,7 +25,13 @@ const insertTask = async (author, title, description, status) => {
   return returnData({ id: data.insertedId }, 'Created', 201);
 };
 
+const editTask = async (id, author, title, description, status) => {
+  await model.editTask(id, author, title, description, status);
+  return returnData({ id }, 'Updated', 200);
+};
+
 module.exports = {
   getAllTasks,
   insertTask,
+  editTask,
 };
