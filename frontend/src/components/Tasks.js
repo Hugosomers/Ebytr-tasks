@@ -14,14 +14,14 @@ export default function Tasks({update, setUpdate}) {
     }
     fetchTasks();
     setTimeout(() => {
-      setUpdate(false);
-    }, 1000)
+      setUpdate(!update);
+    }, 100)
   }, [update, setUpdate]);
 
   return (
     <div className="tasks-container">
       {!tasks.err && tasks.map((task) => (
-        <TaskCard key={task._id} task={ task } setUpdate={setUpdate}/>
+        <TaskCard key={task._id} task={ task } setUpdate={setUpdate} update={update}/>
       ))}
     </div>
   )
