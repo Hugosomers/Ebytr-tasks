@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import './css/createTask.css';
 
-export default function CreateTask() {
+export default function CreateTask({ update }) {
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -21,6 +21,7 @@ export default function CreateTask() {
     if (response.data.status === 201) {
       alert('Task criada')
     }
+    update(true);
   }
 
   return (

@@ -1,0 +1,10 @@
+.tasks-container {
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  /* overflow: auto; */
+  margin: 20px;
+}
