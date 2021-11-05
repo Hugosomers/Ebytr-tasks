@@ -24,10 +24,12 @@ export default function Tasks() {
   }, [updated]);
 
   const sortTasks = (sortBy) => {
-    const sortedTasks = tasks.sort((a, b) => {
-      return a[sortBy].localeCompare(b[sortBy])
-    });
-    setTasks([...sortedTasks]);
+    if (tasks.length > 0) {
+      const sortedTasks = tasks.sort((a, b) => {
+        return a[sortBy].localeCompare(b[sortBy])
+      });
+      setTasks([...sortedTasks]);
+    }
   }
 
   return (
