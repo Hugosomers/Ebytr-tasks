@@ -76,7 +76,7 @@
 
 - &#9744; Sistema de Login e Cadastro com JWT
 
-- &#9744; Ordernar tarefas
+- &#9745; Ordernar tarefas
 
 - &#9744; Deploy da aplicação
 
