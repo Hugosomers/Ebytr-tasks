@@ -1,9 +1,56 @@
+.tasks-main-div {
+  display: flex;
+  flex-direction: column;
+  /* overflow: auto; */
+  width: 100%;
+  margin: 20px;
+}
+
 .tasks-container {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
   overflow: auto;
-  width: 100%;
-  margin: 20px;
+  /* width: 100%;
+  margin: 20px; */
+}
+
+.task-settings-icon {
+  font-size: 50px;
+}
+
+.task-settings-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fffe;
+  border-radius: 50px;
+  padding: 10px 10px;
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  
+}
+
+.task-settings-div-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: identifier 0.7s ease-in;
+}
+
+@keyframes identifier {
+  0% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.task-settings-icons-inner {
+  font-size: 25px;
+  margin: 5px;
 }
